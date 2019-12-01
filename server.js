@@ -15,6 +15,11 @@ app.listen(PORT, function() {
   console.log("Server listening on: http://localhost:" + PORT);
 });
 
+// Serve static content for the app from the "public" directory in the application directory.
+// this avoids err: "MIME type ('text/html') is not a supported stylesheet MIME type"
+app.use(express.static("public"));
+
+
 // Set handlebars
 app.engine("handlebars", handlebars({ defaultLayout: "main" }));
 app.set("view engine", "handlebars");
