@@ -13,7 +13,11 @@ router.get("/api/burger", function (req, res) {
 
 router.get("/index", function (req, res) {
     burger.all(function (data) {
-        res.render("index");
+        var handlebarsObject = {
+            burger: data
+        };
+        console.log(handlebarsObject);
+        res.render("index", handlebarsObject);
     });
 });
 

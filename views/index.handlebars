@@ -2,8 +2,29 @@
 
 <img src="/assets/img/burger.png" alt="Burger Image">
 
+<h2>Burgers you want to eat</h2>
+
+<ul>
+    {{#each burger}}
+    {{#unless devoured}}
+    {{> burger-block devoured=false}}
+    {{/unless}}
+    {{/each}}
+</ul>
+
+<h2>Burgers eaten</h2>
+
+<ul>
+    {{#each burger}}
+        {{#if devoured}}
+            {{burger_name}}
+        {{/if}}
+    {{/each}}
+</ul>
+
+<hr>
 <form action="">
-  Enter a burgur you want to eat<br><br>
-  <input type="text" name="burgurName"><br><br>
-  <input type="submit">
+    Enter a burgur you want to eat<br><br>
+    <input type="text" name="burgurName"><br><br>
+    <input type="submit" id="submitBtn">
 </form>
