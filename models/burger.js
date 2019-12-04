@@ -5,6 +5,11 @@ var burger = {
         orm.selectAll("burger", function (res) {
             cb(res);
         });
+    },
+    insert: function (col, val, cb) {
+        orm.insertOne("burger", col, val, function(res){
+            cb(res);
+        });
     }
 };
 

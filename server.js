@@ -16,6 +16,9 @@ app.use(routes);
 // this avoids err: "MIME type ('text/html') is not a supported stylesheet MIME type"
 app.use(express.static("public"));
 
+// Parse application body as JSON
+app.use(express.urlencoded({ extended: true }));
+app.use(express.json());
 
 // Set handlebars
 app.engine("handlebars", handlebars({

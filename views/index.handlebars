@@ -6,9 +6,9 @@
 
 <ul>
     {{#each burger}}
-    {{#unless devoured}}
-    {{> burger-block devoured=false}}
-    {{/unless}}
+        {{#unless devoured}}
+            {{> burger-block devoured=false}}
+        {{/unless}}
     {{/each}}
 </ul>
 
@@ -23,8 +23,12 @@
 </ul>
 
 <hr>
-<form action="">
+<form class="burger-form">
     Enter a burgur you want to eat<br><br>
-    <input type="text" name="burgurName"><br><br>
+    <input type="text" name="burgerName" id="burger-name-input"><br><br>
     <input type="submit" id="submitBtn">
 </form>
+<br>
+<br>
+<br>
+<a href="/api/burger">Burger API</a>

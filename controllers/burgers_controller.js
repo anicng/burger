@@ -21,4 +21,18 @@ router.get("/index", function (req, res) {
     });
 });
 
+router.post("/api/burger", function (req, res) {
+    var newBurger = req.body;
+    console.log("req: " + req.body);
+    burger.insert(
+        ["name", "devoured"],
+        [req.body.name, 'false'],
+        function (data) {
+            console.log(data);
+            res.json({
+                id: data.insertID
+            })
+        });
+});
+
 module.exports = router;
