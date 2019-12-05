@@ -22,18 +22,14 @@ router.get("/index", function (req, res) {
 });
 
 router.post("/api/burger", function (req, res) {
-    var newBurger = req.body;
-    console.log("req: " + req.body);
-    res.json(req.body);
+    console.log("req: " + req.body.newBurgerName);
 
     burger.insert(
-        ["name", "devoured"],
-        [req.body.name, 'false'],
+        ["burger_name"],
+        [req.body.newBurgerName],
         function (data) {
             console.log(data);
-            res.json({
-                id: data.insertID
-            })
+            res.json(data);
         });
 });
 

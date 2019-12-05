@@ -19,7 +19,7 @@ $(function () {
             data: newBurger
         }).then(function () {
             console.log('hi');
-            location.reload();
+            // location.reload();
 
         });
 
