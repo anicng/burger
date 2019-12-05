@@ -1,5 +1,6 @@
 -- Insert rows into table 'TableName'
-INSERT INTO burger (id, burger_name, devoured)
+INSERT INTO burger
+  (id, burger_name, devoured)
 VALUES
   (1, "Cheese burger", false),
   (2, "Bacon cheese burger", true),
