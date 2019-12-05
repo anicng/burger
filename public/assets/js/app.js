@@ -14,7 +14,7 @@ $(function () {
         //     console.log("newBurger app:" + data)
         // });
 
-        $.ajax("/api/burger", {
+        $.ajax("http://localhost:8080/api/burger", {
             type: "POST",
             data: newBurger
         }).then(function () {
