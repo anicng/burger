@@ -1,6 +1,11 @@
 -- Insert rows into table 'TableName'
-INSERT INTO burger (id, burger_name, devoured)
+INSERT INTO burger (burger_name)
 VALUES
-  (1, "Cheese burger", false),
-  (2, "Bacon cheese burger", true),
-  (3, "Mushroom burger", false);
+  ("Cheese burger");
+  
+INSERT INTO burger (burger_name, devoured)
+VALUES
+  ("Bacon cheese burger", true),
+  ("Mushroom burger", false);
+  
+SELECT * FROM burger;

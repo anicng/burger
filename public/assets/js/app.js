@@ -18,8 +18,8 @@ $(function () {
             type: "POST",
             data: newBurger
         }).then(function () {
-            console.log('hi');
-            // location.reload();
+            $("#burger-name-input").val("");
+            location.reload();
 
         });
 

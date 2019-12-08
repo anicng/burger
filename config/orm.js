@@ -13,9 +13,9 @@ var orm = {
         var queryString = "INSERT INTO " + tablename;
         queryString += "(";
         queryString += col.toString();
-        queryString += ") VALUES (";
-        queryString += vals;
-        queryString += ");"
+        queryString += ") VALUES ('";
+        queryString += vals.toString();
+        queryString += "');"
         console.log("query: " + queryString);
 
         connection.query(queryString, vals, function (err, result) {

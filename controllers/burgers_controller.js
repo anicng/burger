@@ -22,13 +22,13 @@ router.get("/index", function (req, res) {
 });
 
 router.post("/api/burger", function (req, res) {
-    console.log("req: " + req.body.newBurgerName);
+    console.log("req.body.newBurgerName: " + req.body.newBurgerName);
 
     burger.insert(
         ["burger_name"],
         [req.body.newBurgerName],
         function (data) {
-            console.log(data);
+            console.log("Data:" + data);
             res.json(data);
         });
 });
