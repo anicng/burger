@@ -25,7 +25,22 @@ $(function () {
 
     });
     $(".devour").on('click', function () {
-        
+        var id = $(this).data("id");
+        var devourState = $(this).data("devoured");
+    
+        var burgerState = {
+          devour: devourState
+        };
+        $.ajax("/api/burger/" + id, {
+            type: "PUT",
+            data: burgerState
+          }).then(
+            function() {
+              console.log("changed devour to", devourState);
+              // Reload the page to get the updated list
+              location.reload();
+            }
+          );
     });
 
 });

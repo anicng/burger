@@ -3,6 +3,9 @@ var connection = require('./connection.js');
 var orm = {
     selectAll: function (tablename, cb) {
         var queryString = "SELECT * FROM " + tablename + ";";
+
+        console.log("query: " + queryString);
+
         connection.query(queryString, function (err, result) {
             if (err) throw err;
             cb(result);
@@ -28,6 +31,8 @@ var orm = {
         var queryString = "UPDATE " + tablename;
         queryString += "SET " + val;
         queryString += "WHERE " + condition;
+
+        console.log("query: " + queryString);
 
         connection.query(queryString, function (err, result) {
             if (err) throw err;

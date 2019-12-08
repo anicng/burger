@@ -10,6 +10,11 @@ var burger = {
         orm.insertOne("burger", col, val, function(res){
             cb(res);
         });
+    },
+    update: function(condition, cb) {
+        orm.updateOne("burger ", "devoured = true ", condition, function(res){
+            cb(res);
+        })
     }
 };
 
